@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> jquery 的 prop()方法: 獲取 或 設置 標籤屬性</title>
+    
+    <script src="C:/Users/a0976/OneDrive/桌面/html&css筆記/JavaScript/jquery-3.7.1.js"></script>
+
+    <script>
+        $(function(){
+        
+        // JQuery 獲取與設置 屬性 的方法
+
+            // 1. prop(): 用於獲取 DOM 元素屬性（property）
+
+                /*演示: 獲取 <a> 標籤的 herf 屬性*/
+                    alert($('a').prop('href'));
+                
+                /*演示: 設置 <a> 標籤的 herf 屬性*/
+                    $('a').prop({"href":"https://www.youtube.com/"})
+                    alert($('a').prop('href'));
+
+            // 2. val(): 用於獲取或設置表單元素的值
+
+                    /*演示: 獲取 input 標籤的 value值*/
+                    alert($('input').val());
+
+                    /*演示: 設置 input標籤的 value值*/
+                    alert($('input').val("xxxxxxx"));
+
+
+
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <a href="https://tw.yahoo.com/" style="width: 200px;">yahoo</a>
+    </p>
+
+    <input type="text" name="name" value="100">
+</body>
+</html>

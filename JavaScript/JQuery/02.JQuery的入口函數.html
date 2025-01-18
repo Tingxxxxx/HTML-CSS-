@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演示 js 與 jq 入口函數</title>
+
+    <!-- 使用正確的相對路徑或絕對路徑引用本地 jQuery -->
+    <script src="C:/Users/a0976/OneDrive/桌面/html&css筆記/JavaScript/jquery-3.7.1.js"></script>
+
+    <script>
+        // 原生 js 的入口函數
+        window.onload = function(){
+            let oP = document.getElementById("box1");
+            alert('使用 原生 js 獲取標籤: ' + oP.innerText);
+        };
+
+        // jQuery 入口函數
+        // 語法: $(function(){})
+        $(function(){
+            alert("使用 jquery 獲取標籤"+ $("#box2").html()); // 使用 jQuery 獲取元素的 HTML 內容
+        });
+
+
+
+        /* 補充知識: 操作 DOM 元素內容的幾種方法
+
+           1. 需要處理 HTML 標籤時： 使用 .innerHTML 或 html()。
+           2. 僅操作純文字時：使用 .innerText、.textContent 或 .text()。
+           3. 需要完整操作包含標籤的元素時：使用 outerHTML。
+            
+           如果正在使用 jQuery，建議統一使用 html() 和 text()，能簡化開發並保持一致性。
+           其他方法 都是原生js的
+    
+        */
+    </script>
+
+</head>
+<body>
+
+    <!-- 演示 原生js 入口函數 -->
+    <p id="box1">原生js入口函數: </p>
+
+    <!-- 演示 jQuery 入口函數 -->
+    <p id="box2">jquery 入口函數</p>
+
+</body>
+</html>

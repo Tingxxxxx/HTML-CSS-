@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 事件</title>
+
+    <script src="C:/Users/a0976/OneDrive/桌面/html&css筆記/JavaScript/jquery-3.7.1.js"></script>
+
+    <script>
+    
+    $(function(){
+
+        // jquery 中 常用的事件 演示
+        // 搭配 $(this) 指代自己，就像python的self
+
+        // 1. click(func(){}): 點擊事件，一般會結合 button 使用
+        // 演示: 滑鼠點擊哪個 li 標籤，哪個背景顏色就會改變
+        $('li').click(function(){
+            $(this).css({'background':'skyblue'});
+        });
+
+        // 演示: click事件結合 button 獲取 input標籤 的 value值
+        $('#btn').click(function(){
+            alert($('#input').val());
+        });
+
+        // 2. blur(func(){}): 失去焦點
+        $('#input').blur(function(){
+            $(this).css({'background':'skyblue'});
+        });
+
+        // 3. focus(func(){}): 聚焦
+        $('#input').focus(function(){
+            $(this).css({'background':'red'});
+        });
+
+        // 4. mouseover(func(){}): 鼠標進入
+        $('#input').mouseover(function(){
+            $(this).css({'background':'orange'});
+        });
+
+        // 5. mouseout(func(){}): 鼠標離開
+        $('#input').mouseout(function(){
+            $(this).css({'background':'white'});
+        });
+
+    });
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <ul>
+            <li>文字1</li>
+            <li>文字2</li>
+            <li>文字3</li>
+        </ul>
+
+        <p>
+            <input type="text" id='input' name="name" value="請輸入姓名...">
+        </p>
+
+        <p>
+            <input type="button" id="btn" value="點我啊!">
+        </p>
+    </div>
+
+    <ul>
+        <li>點擊文字，背景顏色會變為 skyblue</li>
+        <li>點擊按鈕，會顯示輸入框的值</li>
+        <li>當輸入框失去焦點時，背景顏色會變為 skyblue</li>
+        <li>當輸入框聚焦時，背景顏色會變為 red</li>
+        <li>當鼠標進入輸入框時，背景顏色會變為 orange</li>
+        <li>當鼠標離開輸入框時，背景顏色會變為 white</li>
+    </ul>
+</body>
+</html>

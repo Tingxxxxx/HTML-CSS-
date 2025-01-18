@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選擇集轉移</title>
+    <script src="C:/Users/a0976/OneDrive/桌面/html&css筆記/JavaScript/jquery-3.7.1.js"></script>
+
+
+    <script>
+        $(function(){
+
+        // 使用選擇器，選擇文字 3 這個標籤
+           $Li = $(".box3")
+
+            // 選擇集轉移，選擇這個標籤前一個標籤 prev()
+                $Li.prev().css({'color':'red'});
+
+            // 選擇集轉移，選擇這個標籤前邊所有的標籤 prevAll()
+                $Li.prevAll().css({'color':'yellow'});
+
+            // 選擇集轉移，選擇這個標籤的後一個標籤 next()
+                $Li.next().css({'color':'blue'});
+
+            // 選擇集轉移，選擇這個標籤後邊所有的標籤 nextAll()
+                $Li.nextAll().css({'color':'brown'});
+
+            // 選擇集轉移，除自己以外 其他同一級別的其他標籤 siblings()
+                $Li.siblings().css({'color':'pink'});
+
+            // 選擇父標籤 parent()
+                $Li.parent().css({'background':'skyblue'});
+
+            // 孩子標籤，自己的內容不會發生改變 children()
+                $(("ul")).children().css({'color':'orange'});
+
+            // find() 在子標籤中查找滿足，最終使用的是子標籤 find()
+                $('#id_div').find('.class_p').css({'background':'skyblue'});
+
+         });
+        
+        
+
+
+    </script>
+
+    
+</head>
+<body>
+    <ul>
+        <li>文字1</li>
+        <li>文字2</li>
+        <li class="box3">文字3</li>
+        <li>文字4</li>
+        <li id="id_5">文字5</li>
+        <li>文字6</li>
+        <li>文字7</li>
+        <li>文字8</li>
+    </ul>
+
+    <br><hr>
+
+    <div id="id_div">
+        這是 div 標籤
+        <p class="class_p">好好學習</p>
+        <p>天天向上</p>
+        這是 div
+    </div>
+    
+</body>
+</html>

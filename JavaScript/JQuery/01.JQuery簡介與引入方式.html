@@ -1,0 +1,126 @@
+
+<!-- 
+jQuery 簡介
+1.  是一個快速、小巧且功能強大的 JavaScript 函式庫
+2.  簡化了 HTML 文件操作、事件處理、動畫效果以及 AJAX 交互等常見的 JavaScript 任務
+3.  跨瀏覽器兼容性
+4.  動畫效果和 AJAX 支援
+
+
+
+功能說明：
+選擇器
+點擊按鈕，使用 $("p") 和 $(".highlight") 改變段落樣式。
+
+DOM 操作
+點擊按鈕，使用 html() 修改 #dom-box 的內容。
+
+事件處理
+點擊按鈕，彈出提示框，演示 click 事件處理。
+
+動畫效果
+
+點擊「啟動動畫」按鈕，改變方塊大小並進行淡入淡出。
+點擊「重置動畫」按鈕，恢復方塊初始狀態。
+AJAX 支援
+點擊按鈕，使用 $.ajax 向 API 發送請求，並顯示返回的資料。
+
+> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 核心功能演示</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 10px 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery 核心功能演示</h1>
+
+    <h2>1. 選擇器</h2>
+    <p>這是一段文字</p>
+    <p class="highlight">這是一段有特殊類別的文字</p>
+    <button id="select-btn">點擊選擇器範例</button>
+
+    <h2>2. DOM 操作</h2>
+    <div id="dom-box">原始內容</div>
+    <button id="dom-btn">修改內容</button>
+
+    <h2>3. 事件處理</h2>
+    <button id="event-btn">點擊觸發事件</button>
+
+    <h2>4. 動畫效果</h2>
+    <div id="box"></div>
+    <button id="animate-btn">啟動動畫</button>
+    <button id="reset-btn">重置動畫</button>
+
+    <h2>5. AJAX 支援</h2>
+    <button id="ajax-btn">請求資料</button>
+    <div id="ajax-result" class="hidden"></div>
+
+    <script>
+        $(function() {
+            // 1. 選擇器
+            $("#select-btn").click(function() {
+                $("p").css("color", "green"); // 選擇所有段落
+                $(".highlight").css("font-weight", "bold"); // 選擇帶有類別的段落
+            });
+
+            // 2. DOM 操作
+            $("#dom-btn").click(function() {
+                $("#dom-box").html("內容已被修改");
+            });
+
+            // 3. 事件處理
+            $("#event-btn").click(function() {
+                alert("按鈕被點擊了！");
+            });
+
+            // 4. 動畫效果
+            $("#animate-btn").click(function() {
+                $("#box").animate({ width: "200px", height: "200px" }, 1000)
+                    .fadeOut(1000)
+                    .fadeIn(1000);
+            });
+
+            $("#reset-btn").click(function() {
+                $("#box").stop(true, true).css({
+                    width: "100px",
+                    height: "100px",
+                    display: "block"
+                });
+            });
+
+            // 5. AJAX 支援
+            $("#ajax-btn").click(function() {
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/posts/1",
+                    method: "GET",
+                    success: function(data) {
+                        $("#ajax-result").html(`
+                            <h3>AJAX 返回結果</h3>
+                            <p>標題: ${data.title}</p>
+                            <p>內容: ${data.body}</p>
+                        `).removeClass("hidden");
+                    },
+                    error: function() {
+                        alert("請求失敗！");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

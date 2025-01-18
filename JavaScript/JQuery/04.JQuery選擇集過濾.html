@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 選擇集過濾</title>
+    <script src="C:/Users/a0976/OneDrive/桌面/html&css筆記/JavaScript/jquery-3.7.1.js"></script>
+
+    <script>
+
+        $(function(){
+
+            // 選擇集過濾
+
+            // 選擇器.has('標籤'): 在選擇器中篩選有指定子標籤 的標籤
+                // 演示: 選擇有嵌套 p 標籤的 div標籤，並修改 其 css樣式
+                $("div").has("p").css({'color':'red'});
+
+
+
+            // 選擇器.eq(下標): 獲取標籤後 會返回 jquery 對象，可用下標來操作
+                $('div').eq(0).css({'color':'blue'});
+
+        })
+        
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <div>
+        好好學習
+    </div>
+
+    <div>
+        <p>
+            天天向上
+        </p>
+    </div>
+
+    <div>
+        天天開心
+    </div>
+
+
+    
+</body>
+</html>

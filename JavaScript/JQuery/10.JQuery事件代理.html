@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件代理</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        /*
+        事件代理（Event Delegation）：
+        - 是一種透過父元素處理子元素事件的技術，而不是在每個子元素上單獨綁定事件處理器。
+        - 優點：
+          1. 可以提高性能，特別是在大量動態生成的元素需要綁定事件的情況下。
+          2. 可以更方便地處理未來動態新增的元素。
+        
+        ✅ 建議使用 on() 取代.delegate() 方式，因為更靈活且支援多種事件。語法：
+            $(父選擇器).on('事件', '子選擇器', 函數);
+        */
+
+        $(function(){
+
+            // 1. 對目前的三個 li 標籤進行循環綁定 (僅綁定現有元素)
+            $("li").click(function(){
+                $(this).css({'background':'red'});
+            });
+
+            // 2. 模擬動態新增元素 (標籤4與標籤5無法綁定事件)
+            $('ul').append('<li>標籤4</li>');
+            $('ul').append('<li>標籤5</li>');
+
+            // 3. 使用事件代理 (推薦用法: on 方法)
+            $('ul').on('click', 'li', function(){
+                $(this).css({'background':'red'});
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>標籤1</li>
+            <li>標籤2</li>
+            <li>標籤3</li>
+        </ul>
+    </div>
+</body>
+</html>

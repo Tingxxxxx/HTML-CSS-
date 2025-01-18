@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件冒泡示範</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            /*
+            # 事件冒泡: 當一個事件被觸發時，它會先在目標元素上觸發，然後向上傳播到父元素，依此類推。
+
+            # 事件冒泡的流程：
+            1. 事件觸發在目標元素上。
+            2. 事件冒泡至該元素的父元素。
+            3. 事件繼續冒泡到祖先元素，直到根元素（document）。
+
+           # 阻止冒泡事件: 
+           event.stopPropagation() : 事件將不會繼續向父元素傳遞，僅會在當前元素上觸發。
+            
+            英文單詞:Propagation(傳播)
+            
+            */
+
+
+            // 目標元素
+            $('#child').click(function(event){
+                alert("點擊了子元素！");
+                event.stopPropagation();  // 阻止事件冒泡,如果不寫此行，則會發生只點子元素但父.祖父元素也會跳出彈框
+            });
+
+            // 父元素
+            $('#parent').click(function(){
+                alert("點擊了父元素！");
+            });
+
+            // 最外層元素
+            $('#grandparent').click(function(){
+                alert("點擊了最外層元素！");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="grandparent" style="width: 300px; height: 300px; background-color: lightblue;">
+        <div id="parent" style="width: 200px; height: 200px; background-color: lightgreen;">
+            <div id="child" style="width: 100px; height: 100px; background-color: orange;">
+                點擊我！
+            </div>
+        </div>
+    </div>
+</body>
+</html>

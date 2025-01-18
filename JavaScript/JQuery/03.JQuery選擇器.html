@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="C:/Users/a0976/OneDrive/桌面/html&css筆記/JavaScript/jquery-3.7.1.js"></script>
+
+    <script>
+        // 對頁面標籤進行操作，故將代碼寫在 jquery 入口函數中
+        $(function(){
+
+            // 注意: jQuery 選擇器，選擇成功後，會返回一個jQuery對象(基本理解為 包含更多內建功能的 js 數組 即可)，故可以使用length屬性來判斷是否有選到
+            // 注意: 不一定要定義變量接收，特別只有選到一個標籤時可直接用 ex: $("p").html()，但如果選擇器會選到多個符合的標籤，則通過變量存方便操作
+
+            // 1. 標籤選擇器: $("標籤名")
+                $p = $("p");
+                alert('共選了:'+ $p.length + '個<p>標籤');
+                alert('第一個p標籤內容:' + $p[0].innerHTML); // 原生js : [下標] + .innerHTML 選
+                alert('第二個p標籤內容:'+ $p.eq(1).html()); // JQuery: .eq(下標).html() 來選
+
+            // 2. 類選擇器: $(".類名")
+                $class = $(".highlight");
+                alert('類名為highlight的標籤有:'+ $class.length + '個');
+
+            // 3. ID選擇器: $("#ID名")
+                $id = $("#unique");
+                alert('id=unique的標籤有:'+ $id.length + '個'); // 修正此處變量為 $id 而非 $class
+
+            // 4. 層級選擇器: $("選擇器1 選擇器2")
+                $leval = $('div p');
+                alert($leval.eq(1).html());
+
+
+
+            // 5. 屬性選擇器: 允許選擇具有特定屬性或屬性值的元素。使用方括號 [] 來指定條件。
+
+            // 1. 基本屬性選擇器: $('標籤[屬性]')
+                $divclass = $("div[class]");
+                alert("包含class屬性的div標籤數:" + $divclass.length);
+
+            // 2. 屬性等於某個值: $("'標籤[屬性='value']')
+                $pclass = $("p[class=highlight]");
+                alert("屬性class=highlight的p標籤數:" + $pclass.length);
+
+            // 3. 屬性值包含某個子字串: $("'標籤[屬性*='value']")
+                $input = $("input[placeholder*='文字']");
+                alert("placeholder屬性中包含'文字'的input標籤數:" + $input.length);
+
+            // 4. 屬性值以某個字串開頭: $("'標籤[屬性^='value']")
+                $inputPrefix = $("input[placeholder^='輸入']");
+                alert("placeholder屬性以'輸入'開頭的input標籤數:" + $inputPrefix.length);
+
+            // 5. 屬性值以某個字串結尾: $("'標籤[屬性$='value']")
+                $inputSuffix = $("input[placeholder$='密碼']");
+                alert("placeholder屬性以'密碼'結尾的input標籤數:" + $inputSuffix.length);
+
+            // 6. 屬性值包含指定的單詞: $("'標籤[屬性~='value']")
+                $divLang = $("div[lang~='en']");
+                alert("lang屬性包含'en'的div標籤數:" + $divLang.length);
+
+            // 7. 屬性值包含指定的單詞: $("'標籤[屬性|='value']")
+                $divLangPrefix = $("div[lang|='en']");
+                alert("lang屬性以'en'開頭的div標籤數:" + $divLangPrefix.length);
+        });
+    </script>
+</head>
+<body>
+    <!-- 1. 標籤選擇器 -->
+    <h1>這是 h1 標籤</h1>
+    <p>這是 p 標籤</p>
+    <div>這是 div 標籤</div>
+    <span>這是 span 標籤</span>
+
+    <!-- 2. 類選擇器 -->
+    <div class="highlight">這個 div 擁有 highlight 類別</div>
+    <p class="highlight">這個 p 標籤也擁有 highlight 類別</p>
+    <div class="highlight">這個 div 也擁有 highlight 類別</div>
+
+    <!-- 3. ID選擇器 -->
+    <div id="unique">這是唯一的 div，擁有唯一的 ID</div>
+    <p id="unique">這個 p 標籤也有相同的 ID</p>
+
+    <!-- 4. 層級選擇器 -->
+    <div>
+        <h2>標題在 div 裡面</h2>
+        <p>段落在 div 裡面</p>
+        <p>另一個段落在 div 裡面</p>
+    </div>
+
+    <div>
+        <ul>
+            <li>列表項目 1</li>
+            <li>列表項目 2</li>
+        </ul>
+    </div>
+
+    <!-- 5. 屬性選擇器 -->
+    <a href="https://www.example.com">這是一個包含 href 屬性的超連結</a>
+    <input type="text" placeholder="輸入文字">
+    <input type="password" placeholder="輸入密碼">
+    <img src="image.jpg" alt="一張圖片">
+    <button disabled>這個按鈕是禁用的</button>
+    <input type="text" value="已填寫的文字">
+
+    <div class="active" lang="en">這個 div 擁有 class 'active' 且 lang 屬性是 en</div>
+    <div lang="fr">這個 div 的 lang 屬性是 fr</div>
+</body>
+</html>

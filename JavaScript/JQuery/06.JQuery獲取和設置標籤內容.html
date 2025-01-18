@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 獲取 和 設置 標籤內容</title>
+
+    <script src="C:/Users/a0976/OneDrive/桌面/html&css筆記/JavaScript/jquery-3.7.1.js"></script>
+
+    <script>
+
+        $(function(){
+            // jquery 常用獲取.設置.追加 標籤內容的常用方法
+
+                // html(): 獲取標籤中 包含html.文本 在內的所有內容
+                    alert($('div').html());
+
+                    // html('設置新內容'): 此方法同時可設置標籤內容
+                       $('div').html('修改後的div標籤');
+                
+                // text(): 只獲取標籤中的文本內容
+                    alert($('div').text())
+                     // text(): 也可修改標籤中的文本內容
+                        $('div').text('123');
+
+                // append(): 在選定標籤的內容末尾追加新的內容
+                $('div').append('<br>')
+                    $('div').append('<a href="https://tw.yahoo.com/">奇摩</a>')
+                
+
+        });
+    </script>
+
+</head>
+<body>
+    
+    <div>
+        這是一個div標籤
+        <br>
+        <a href="https://www.youtube.com/">youtube</a>
+    </div>
+    
+    
+</body>
+</html>
