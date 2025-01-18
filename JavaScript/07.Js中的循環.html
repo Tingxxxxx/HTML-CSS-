@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    /* js 的 while 循環 語法:
+        
+        while(判斷條件){
+            當循環條件成立時，執行的代碼
+        }; */
+    
+        // 演示:while循環遍歷    
+        var list = [0,1,2,3,4];
+        var num = 0;
+        while (num < list.length){
+            alert(list[num])
+            num++ //同python2的 +=1
+        };
+
+    
+    /* js 的 for循環 語法:
+
+        for (表達式1:循環因子的初始值; 表達式2:條件判斷; 表達式3:循環因子更新) {
+                需要重複執行的代碼塊};
+
+        # for循環執行過程:
+        1. 表達式1:循環因子初始化，只執行一次(通常是 let 或 var。)
+        2.進入條件判斷，滿足則執行{}內容，否則結束循環
+        3. {}內容執行完畢，則更新表達式3的循環因子
+        4. 重複2.3步驟判斷，直到條件不成立退出循環
+        5. 可使用 continue 跳過當前循環，使用 break 終止整個循環： (用法同python)
+
+         */
+        
+         //演示:for循環 打印 0 到 4：
+         for (let num=0; num<=4; num++){
+            alert('打印:'+num);
+         };
+
+    
+    /* js 的 do ... while 循環 語法:
+            
+        do{
+            執行代碼
+        } while 條件判斷;
+
+        # do while 循環過程:
+        1.先執行一次 {} 中的程式碼：
+        2.後進行條件判斷
+        3.如果條件為 true，則重新執行{}，並再次檢查條件。如為 false，則結束循環
+
+    */
+    
+    //演示: 循環輸出 i 的值
+        let i = 0;
+        do {
+            console.log(i); // 輸出 i 的值
+            i++;
+        } while (i < 5); // 條件成立時，繼續執行
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

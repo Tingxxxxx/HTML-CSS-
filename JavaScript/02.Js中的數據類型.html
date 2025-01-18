@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 使用 內嵌式 js 演示各種數據類型 -->
+     <script>
+
+        // # 在 js中聲明變量的三種方式
+
+        // 1. var: 作用域是全局或函數作用域，允許重複聲明（現在已不推薦）
+        // 2. let: 塊級作用域，不允許重複聲明 
+        // 3. const: 塊級作用域，不可重複宣告，必須在聲明時賦值，值不能再改變。
+
+
+        // js 中的數據類型:
+        //注意: 變量命名方式建議: 小寫類型+大寫開頭變量名 , 結尾要加 ;
+
+        // typeof()函數: 查看變量的數據類型
+        // 在控制台輸出 console.log()
+
+
+        // number 類型: 整數.小數
+        let iNum = 10;
+        console.log(iNum,typeof(iNum));
+
+        //float 類型: 小數
+        let fNum = 1.33;
+        console.log(fNum,typeof(fNum));
+
+        //string 類型: 字符串
+        let sStr ='hellen';
+        console.log(sStr,typeof(sStr));
+
+        //null 類型: 「沒有值」或「空的」，是開發者主動設置的，表示「這裡應該有值，但現在是空的」 
+        let user = null; // 初始化為空，表示還沒有用戶資料
+
+        //undefined 類型: 表示「未定義」或「還沒被賦值」，通常是由 JavaScript 自動分配的，而不是開發者主動設置的
+        let x;
+        console.log(x); // undefined
+
+        //object 類型: 存儲key:value普通物件、陣列和函數等。
+        let person = { name: "Alice", age: 25 }; // 普通物件
+        console.log(person,typeof(person));
+
+        let numbers = [1, 2, 3]; // 陣列
+        console.log(numbers,typeof(numbers));
+
+        function greet() { console.log("Hello!"); }; // 函數
+        
+        //boolean 類型: true 或 false
+        let isLoggedIn = true;
+        console.log(isLoggedIn,typeof(isLoggedIn));
+
+        let hasAccess = false;
+        console.log(hasAccess,typeof(hasAccess));
+
+     </script>
+
+</head>
+<body>
+    
+</body>
+</html>

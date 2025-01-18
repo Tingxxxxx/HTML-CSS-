@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Js的使用: 1.行內式 2.內嵌式 3.外鏈式 -->
+    <!-- 2. 內嵌式 要在 <head>內使用 <script>標籤定義 -->
+    <script>
+        // 寫在script標籤裡的，都是 js 語言
+        
+        // 演示內嵌式的 彈框函數 alert(message)，刷新瀏覽器會自動跳出
+        alert("內嵌式js")
+
+
+    </script>
+
+    <!-- 3.外鏈式: 在外部定義 js 文件，使用<script> 標籤中的src 屬性鏈接 -->
+    <!-- 刷新瀏覽器會自動跳出 -->
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <!-- 1. 行內式,主要用於事件 -->
+    <!-- 演示 js中的 alert(message) 函數: 顯示一個簡單的警示對話框 -->
+    <input type="button" value="點我" onclick="alert('ok!')">
+    
+</body>
+</html>

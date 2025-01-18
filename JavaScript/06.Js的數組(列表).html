@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- js 代碼 寫在 script裡 -->
+     
+    <script>
+    /*
+    # 定義數組的兩種方式
+    1. var 變量名 = new Array(x,x,x,x)     
+    2. var 變量名 = [x,x,x]
+
+    # js 數組的特性(基本同pyhon)
+    1. 定義後可修改值
+    2. 可通過索引訪問(從0開始，但不支持-1~倒著訪問)
+    3. 可以存儲不同類型的數據（數字、字符串、對象等）。
+
+    */
+    var aList =  new Array(1,2,3);
+    var aList = [4,5,6];
+
+    /* 演示: 通過下標索引訪問數組(方式與python相同)*/
+        console.log(aList[0]); // 結果:4
+        console.log(aList[10]); // 訪問不存在的下標，結果:undefined
+    
+    /* 演示: 通過索引 修改數組的元素 */
+        aList[0]='修改後的元素'
+        console.log(aList[0]); // 結果:'修改後的元素'
+
+        // 如果下標值不存在，則會在該下標位置插入元素，中間的下標會自動補為空
+        aList[6] = '在下標6插入';
+        console.log(aList); // 結果:' ['修改後的元素', 5, 6, 空白 ×3, '在下標6插入']
+
+    /* 演示: js 數組的常用方法 */
+        
+        // list.length: 獲取數組長度 / 設置數組長度 (注意這方法不用())
+
+            // 獲取數組長度
+            let li = [1,2,3]
+            console.log('li長度:'+li.length); // 結果:3
+            // 設置數組長度
+            let li2 = [1, 2, 3, 4];
+            arr.length = 2; // 截短數組
+            console.log(li2); // 結果: [1, 2]
+
+            arr.length = 5; // 擴展數組
+            console.log(li2); // 結果: [1, 2, undefined, undefined, undefined]
+
+
+        // list.indexof(): 查找指定元素在數組中的索引 (同python的 .index()方法)
+        console.log(aList.indexOf(5)); // 結果:下標為1
+
+
+        // list.push(): 在數組尾部添加元素(同python的 .append()方法)
+        aList.push('追加元素');
+        console.log(aList); // 結果:['修改後的元素', 5, 6, 空白 ×3, '在下標6插入', '追加元素']
+
+        
+        // list.pop(): 移除最後一個元素(同python)
+        aList.pop();
+        console.log(aList); // 結果: ['修改後的元素', 5, 6, 空白 ×3, '在下標6插入']
+        
+
+        //list.splice(start, deleteCount, item1, item2, ...):指定位置插入或刪除數據
+        /*參數:
+        start: 必填，指定開始操作的索引（從 0 開始計算），如果是負數，表示從數組末尾開始計算索引。
+        deleteCount: 可選，表示要刪除的元素數量，若為 0，不刪除元素（僅插入）
+        item:可選，要插入到數組中的元素。如果未提供，則只執行刪除操作。 */
+
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+            //刪除數據 
+            arr.splice(0,3);
+            console.log(arr); // 從下標0開始，刪3個 結果:[4,5,6,7,8,9,10];
+
+            //插入數據
+            arr.splice(7,0,9,9,9); // 不刪除數據，從下標7位置開始插入，結果:[4, 5, 6, 7, 8, 9, 10, 9, 9, 9]
+            console.log(arr);
+
+            //替換數據
+            arr.splice(0,2,"a","b"); //結果:['a', 'b', 6, 7, 8, 9, 10, 9, 9, 9]
+            console.log(arr);
+
+            //使用負索引
+            arr.splice(-3,3); // 從倒數第 3 個元素開始，往後刪除 3 個元素，結果:['a', 'b', 6, 7, 8, 9, 10]
+            console.log(arr); 
+
+            //省略刪除個數，則刪除從指定索引開始到末尾的所有元素
+            arr.splice(0);
+            console.log(arr);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+// <使用 js 獲取 html 標籤對象>
+
+    // document.getElementById()方法: 用於選取網頁中具有特定 id 的 HTML 元素
+    /* 注意事項:
+        1. 找到則返回 html對象，沒找到返回null
+        2. 如果這個方法在head中使用，因 html代碼是由上往下執行，相關標籤可能都還沒定義，故會選不到標籤
+        3. document類似於python中 self 的概念
+
+        解決方案:
+        1. 優先考慮將腳本放在 <body> 結尾，簡單且性能更好。
+        2. 如果腳本必須放在head(通常原因為腳本負責初始化某些全局變量，或控制網頁的初始渲染)
+        　　須搭配入口函數（如 window.onload 或 DOMContentLoaded）來確保先加載標籤
+        3. 使用現代屬性（如 defer 或 async）來優化腳本的執行順序。
+    */ 
+        
+    /* 入口函數的使用(即告訴瀏覽器先執行完body，在執行這裡的代碼)
+            語法:
+            window.onload=function(){}
+    */
+            // 演示: 入口函數搭配document.getElementById()方法 獲取html頁面標籤
+     window.onload=function(){
+        let oDiv = document.getElementById("box1")
+        alert(oDiv) // 會顯示 [object HTMLDivElement]，代表已獲取標籤對象
+        };
+    
+
+    </script>
+</head>
+<body>
+
+    <!-- 演示獲取頁面標籤 -->
+     <div id="box1">好好學習 天天向上!</div>
+    
+</body>
+</html>
+
+
+<!-- 
+腳本放置位置與現代屬性補充:
+
+
+    <body>
+        <div id="box1">好好學習 天天向上!</div>
+        <script>
+            let oDiv = document.getElementById("box1");
+            alert(oDiv);
+        </script>
+    </body>
+
+
+使用 defer:
+
+    <script src="script.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+-->

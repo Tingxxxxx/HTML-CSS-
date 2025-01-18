@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- js代碼 要寫在script中 -->
+    <script>
+        // 局部變量: 函數內部定義的變量
+        // 全局變量: 在函數外部定義的變量
+
+        // 定義全局變量、函數
+        var iNum = 10;
+        function fun1() {
+            // 1.1 驗證函數內部可以直接訪問全局變量
+            console.log("函數內部訪問全局變量: " + iNum);
+            
+            // 2.1 在函數內部，修改全局變量
+            iNum = 200; // 不需要再加 var
+            
+            // 2.2 函數內部，打印修改後的全局變量
+            console.log("修改後的全局變量: " + iNum);
+
+            // 3. 在函數內部定義 局部變量
+            var sStr = '我是局部變量';
+            console.log("函數內部的局部變量: " + sStr);
+        };
+
+        // 1.2 調用函數
+        fun1();
+
+        // 2.3 在函數調用後，在函數外打印，驗證全局變量已被修改
+        console.log("函數外驗證，被修改後的全局變量: " + iNum);
+
+        // 4. 演示在函數外部，無法訪問局部變量
+        try {
+            console.log(sStr); // 預期報錯: sStr is not defined
+        } catch (e) {
+            console.error("錯誤: " + e.message);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

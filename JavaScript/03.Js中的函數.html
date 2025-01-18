@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- js代碼都要寫在script裡 -->
+    <script>
+        // js函數的定義語法演示:
+        function myfun(){
+            alert("函數定義");
+        };
+
+        // 函數的調用: 同python 用()調用
+        myfun();
+
+        // 定義帶有參數的函數: 基本同ptyhon類似，變量記得加 var.let 等聲明
+        function fun(num1,num2){
+            var sum = num1 + num2;
+            alert(sum)
+            return sum  // 函數的返回值 與python相同
+        };
+
+        // 調用帶有參數的函數
+        var res = fun(10,20);
+        alert("返回值:"+res);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

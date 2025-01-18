@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+    // 定義 myfun():實現  修改標籤內容的值，實現點擊按鈕將用戶輸入的數據彈框出來
+    function myfunc(){
+        let oInput = document.getElementById('box1') // 獲取標籤對象
+        alert(oInput.value)
+
+    };
+
+
+
+
+    // 配合入口函數 獲取頁面標籤
+        window.onload=function(){
+            let oInput = document.getElementById('box1') // 獲取標籤對象
+            oInput.value='已輸入'
+            alert(oInput.value)
+
+        };
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+    <!-- 演示 獲取 html 標籤 並修改屬性值  -->
+
+        <!-- 設置標籤 -->
+        <input type="text" value="請輸入姓名...!" id="box1">
+        <!-- 設置行為函數 -->
+        <input type="button" value="提交" id="box2" onclick="myfunc()">   
+    
+</body>
+</html>

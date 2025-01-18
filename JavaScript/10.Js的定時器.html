@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 定時器筆記</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .box {
+            margin: 10px 0;
+        }
+    </style>
+    
+    <script>
+
+    /*
+    js中的定時器，常用來實現類似 電商網站首頁 循環撥放的廣告功能
+
+    定時器分類:
+    1. 單次定時器: setTimeout(func, delay, param1, param2, ...) 
+            function: 要執行的函數。
+            delay: 延遲的時間（以毫秒為單位）。
+            param1, param2...: 可選，傳遞給函數的參數。
+            可定義變量來接收返回值:timerId: 可以用來清除定時器
+
+    2. 多次定時器:setInterval(function, delay, param1, param2, ...);
+            * 參數用法都同上
+            * 用於以固定的時間間隔重複執行指定的函數，直到手動停止。
+
+
+    
+    清除定時器:
+    1. 清除單次定時器:clearTimeout(timerId);
+    2. 清除多次定時器:clearInterval(timerId);
+        
+    */
+        // 使用 setTimeout 模擬延時操作
+        function showAlert() {
+            setTimeout(function() {
+                alert('這是延時 3 秒後彈出的提示框');
+            }, 3000);
+        }
+
+        // 使用 setInterval 模擬重複執行
+        let counter = 0;
+        let intervalId;
+
+        function startCounter() {
+            const display = document.getElementById('counterDisplay');
+            intervalId = setInterval(function() {
+                counter++;
+                display.textContent = `計數: ${counter}`;
+            }, 1000); // 每秒執行一次
+        }
+
+        function stopCounter() {
+            clearInterval(intervalId); // 清除定時器
+            alert('計時已停止');
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript 定時器示例</h1>
+
+    <div class="box">
+        <h2>1. setTimeout</h2>
+        <p>點擊按鈕，3 秒後彈出提示框。</p>
+        <button onclick="showAlert()">延時彈框</button>
+    </div>
+
+    <div class="box">
+        <h2>2. setInterval</h2>
+        <p>點擊「開始計時」每秒遞增計數，點擊「停止計時」結束計數。</p>
+        <button onclick="startCounter()">開始計時</button>
+        <button onclick="stopCounter()">停止計時</button>
+        <p id="counterDisplay">計數: 0</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 創建對象</title>
+
+    <script>
+        // js 中 創建對象的方式
+
+            // 1. 使用 new Object();
+                let oPerson = new Object();
+                // 1.1 幫對象添加屬性: 對象.屬性 = 數據值;
+                oPerson.name = 'kelly';
+                oPerson.age = 34;
+
+                // 1.2 幫對象添加方法: 對象.方法名 = 函數名(可以使用匿名函數)
+                oPerson.sayhi = function(){
+                    alert('大家好，我叫:'+ this.name); // this 指的是方法所屬的對象
+                };
+
+                // 1.3 調用對象的方法
+                oPerson.sayhi();    
+            
+            
+            // 2. 使用字面量方法: {key:value,......}
+                /*注意:key值為要添加的屬性名，不需要加上"" */
+                let oStudent = {
+                    name:'hellen',
+                    age:18,
+                    myfunc:function(){     // 此行: 未 myfunc 這個屬性，賦予了對應的value(一個函數)
+                        alert('大家好，我叫:'+ this.name);
+
+                }};
+
+                oStudent.myfunc();
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

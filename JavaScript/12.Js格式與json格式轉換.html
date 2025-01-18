@@ -1,0 +1,54 @@
+<!-- 
+
+JSON: JS 一種輕量級的數據交互格式
+
+    JSON 格式的數據要求很嚴格 (2 種):
+    1. 字符串格式: '{"name":"admin","age":18}'
+    2. 列表形式，且裡面的元素都是字典: 
+       [
+           {"name":"admin","age":18},
+           {"name":"root","age":16},
+           {"name":"書婷","age":28}
+       ]
+
+    格式間互換方法:
+
+    1. JSON 格式的字串 >>> JavaScript 對象 : JSON.parse()
+    2. JavaScript 對象 >>> JSON 格式的字串 : JSON.stringify()
+
+    補充: Python 處理 JSON：
+       - Python 字典 >>> JSON 格式字串 : json.dumps()
+       - JSON 格式字串 >>> Python 字典 : json.loads()
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 1. 定義一個 JSON格式字符串
+        let sStr = '{"name":"小王","age":18,"like":["學習","音樂"]}'  // 注意: 裡面都要用 雙引號 ""
+
+        // JSON 字串 >>>> JavaScript 對象 
+        let oMyobj = JSON.parse(sStr);
+        console.log('類型:'+ typeof(oMyobj),oMyobj); // 結果: 類型:object {name: '小王', age: 18, like: Array(2)}
+            
+            // 獲取 js 對象的 name與age屬性
+            console.log(oMyobj.name,oMyobj.age,oMyobj.like); 
+        
+        // JavaScript 對象 >>>> JSON 字串
+        let sJsonstr = JSON.stringify(oMyobj); // 轉回json字串: {"name":"小王","age":18,"like":["學習","音樂"]}
+        console.log(sJsonstr);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
