@@ -1,0 +1,106 @@
+
+
+<!-- DOCTYPE:html 為文檔聲明 -->
+<!DOCTYPE html>
+
+<!-- <html>標籤，為告訴瀏覽器，代碼從此開始，lang為語言聲明 -->
+<html lang="en">
+
+<!-- 頁頭開始 -->
+<head>
+    
+    <!-- 設置字符集 -->
+    <meta charset="UTF-8">
+
+    <!-- 移動端自適應 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--  <title>標籤-網頁標題 -->
+    <title>我的網站</title>
+
+<!-- 頁頭結束 -->
+</head>
+
+
+<!-- 頁身開始 -->
+<body>
+
+<!-- 1.雙標籤 -->
+
+    <!-- <h1>~<h6> 字體標籤: 字體由大到小，默認換行 -->
+    <h1>字體標籤-最大</h1>
+    <h2>字體標籤</h2>
+    <h3>字體標籤</h3>
+    <h4>字體標籤</h4>
+    <h5>字體標籤</h5>
+    <h6>字體標籤-最小</h6>
+
+    <!-- <p> 段落標籤:自動換行,代表一個文本段落 -->
+        <p>段落標籤</p>
+        <p>段落標籤</p>
+
+
+
+<!-- 2. 單標籤  -->    
+
+<!-- 單純輸入兩行123是無換行的，網頁上實際顯示: 123 123  -->
+123    
+123
+
+<!-- <br>換行標籤  -->
+<br>
+換行標籤測試
+<br>
+換行標籤測試
+
+<!-- <hr> 橫線標籤 -->
+<hr>
+
+<!-- 3.帶有屬性的標籤 -->
+
+    <!-- <img>圖片標籤: src（source)圖片來源，alt(替代文字)當圖片無法加載時，會顯示替代文字 -->
+    <img src="./source/img2.jpg" alt="kelly"> 
+    <!-- 直接引用網絡上的圖片 -->
+    <img src="https://img.ltn.com.tw/Upload/playing/page/2019/12/26/191226-21914-01-feK7W.jpg" alt="網路照片">
+
+    
+    <!--  <a href="URL">連結文本</a> 超連標籤結 : anchor(錨點)-->
+
+    <!--
+    超連標籤結常用屬性:
+
+        herf=連結的目標地址 
+        target=連結打開的方式 _self(預設:當前窗口)、 _blank(新分頁) 
+        title=屬標懸停連結時顯示的訊息  
+    -->
+
+    <!-- 寫網址時一定要加上http -->
+
+    <a href="https://www.google.com" title="前往示例網站">示例網站</a>
+
+        
+        <!-- rel屬性:用於指定連結與當前文檔之間的關係，這有助於搜尋引擎、瀏覽器和網站安全性更好地理解和處理連結 -->
+        <!-- 不要跟蹤:nofollow / noopener:在新分頁打開安全連結 -->
+        <a href="https://www.google.com" target="_blank" rel="noopener">前往 Google</a>
+
+        <!-- 連結到同網站內的其他頁面 -->
+        <a href="about.html">關於我們</a>
+
+        <!-- 連結到郵箱:當用戶點擊連結時，系統會自動打開預設的電子郵件應用，並將收件人設置為該信箱-->
+        <a href="mailto:a0976202920@gmail.com">發送郵件</a>
+
+
+    
+    
+<!-- 4.雙標籤可以嵌套 -->
+        
+        <!-- 演示:超連結標籤 嵌套 圖片標籤，效果:供點擊的連結從文字變為圖片 -->
+        <a href="https://www.google.com">   
+        <img src="./source/START.png" alt="開始">    
+        </a>
+
+    
+</body>
+
+
+</html>

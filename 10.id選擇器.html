@@ -1,0 +1,55 @@
+<!-- 
+css 選擇器: css 用來選則出標籤，並給標籤加樣式。
+
+css 選擇器的種類:
+
+1.標籤選擇器
+2.類選擇器
+3.層級選擇器（後代選擇器）
+4.id選擇器
+5.組選擇器
+6.偽類選擇器
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 選擇器 寫在style裡 -->
+    <style>
+        /* 
+        4. id 選擇器: 
+        # 類似於 class類選擇器，只是id是唯一的，不可重複
+        # 只能作用於一個標籤，故不推薦使用
+
+        # 語法:
+            #id值{     
+                屬性:值    
+            }*/
+
+        /*
+        注意:
+         類選擇器用 . 開頭 ex: .box1{} 
+         id選擇則器用 # 開頭 ex: # box2
+        */
+
+        #box1{background-color: aqua;}
+        #box2{background-color: brown;}
+        #box3{background-color: gold;}
+     
+
+    </style>
+</head>
+<body>
+
+    <!-- 4. id選擇器 -->
+     <p id=box1>123</p>
+     <p id="box2">123</p>
+     <p id="box3">123</p>
+
+</body>
+</html>

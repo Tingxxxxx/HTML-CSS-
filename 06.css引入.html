@@ -1,0 +1,65 @@
+<!--
+css (Cascading Style Sheet)層疊樣式表
+1. 美化介面: 設置標籤文字大小.顏色.字體
+2. 控制頁面布局: 設置浮動.定位樣式
+ 
+三種引入方式
+1.行内式(少用)
+2.内嵌式（內部樣式）
+3.外鏈式(復用性最高，常用)
+
+樣式規則
+属性名1：属性值1;
+ex width:100px
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- 2. 內嵌式(要在<head>，並寫在<style>標籤裡) -->
+
+    <style>
+        /* 在style裡寫css代碼 */
+        /* 作用於整個頁面的所有div標籤 */
+        /* div{
+            background:chartreuse;   
+        } 
+
+        <div> 為容器標籤，功用: 布局和組織頁面.引入css */
+
+        div{
+            background-color: aqua; font-size: 18px;
+        }
+
+    </style>
+
+
+    <!-- 3. 外鏈式 link 建議寫在style外面-->
+   <link rel="stylesheet" href="./css/main.css">
+
+
+</head>
+
+<body>
+    <!-- 1. 行內式 只能在當前標籤中使用，復用性低，故很少用 -->
+    <div style="width:100px; height:100px; background:red ">
+        行內式引入css測試
+    </div>
+    
+
+    <div>
+        內嵌式引入css測試
+    </div>
+
+    <div>
+        外鏈式引入css測試2
+    </div>
+    
+</body>
+</html>

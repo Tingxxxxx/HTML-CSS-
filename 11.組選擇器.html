@@ -1,0 +1,58 @@
+<!-- 
+css 選擇器: css 用來選則出標籤，並給標籤加樣式。
+
+css 選擇器的種類:
+
+1.標籤選擇器
+2.類選擇器
+3.層級選擇器（後代選擇器）
+4.id選擇器
+5.組選擇器
+6.偽類選擇器
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 選擇器 寫在style裡 -->
+    <style>
+        /* 
+        5. 組 選擇器: 將多個選擇器，放在一起進行設置
+     
+        # 語法:
+            選擇器1, 選擇器2, 選擇器3...{
+                屬性:值
+            } */
+
+
+        /* 每個標籤 單獨的設置 */
+        .box1{background-color: aqua;}
+        .box2{background-color: red;}
+        .box3{background-color: brown;}
+
+
+        /* 使用 組選擇器，進行統一性設置 */
+        .box1, .box2, .box3{
+            height: 200px;
+            width: 200px;
+        }
+
+    
+
+
+    </style>
+</head>
+<body>
+
+    <!-- 5. 組選擇器 -->
+     <p class=box1>123</p>
+     <p class="box2">123</p>
+     <p class="box3">123</p>
+
+</body>
+</html>

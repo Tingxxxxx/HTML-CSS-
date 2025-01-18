@@ -1,0 +1,67 @@
+<!-- 
+css 選擇器: css 用來選則出標籤，並給標籤加樣式。
+
+css 選擇器的種類:
+
+1.標籤選擇器
+2.類選擇器
+3.層級選擇器（後代選擇器）
+4.id選擇器
+5.組選擇器
+6.偽類選擇器
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 選擇器 寫在style裡 -->
+    <style>
+        /* 
+        3. 層級選擇器(後代選擇器): 在標籤嵌套中使用
+        
+        # 選擇器1和選擇器2 可以式任意一種選擇器
+
+        # 語法:
+            選擇器1 選擇器2{     
+                屬性:值    
+            }*/
+
+
+        /* 只修改嵌套在<div>裡的<p>標籤 */
+        div p{
+            background-color: blueviolet;
+        }
+        
+
+        /*只修改標籤為class=box1 且嵌套了<p>的標籤 */
+        .box1 p{
+            background-color: cadetblue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 3. 層級選擇器 -->
+
+    <!-- 具有嵌套關係的標籤 -->
+        <div>
+            <p>只修改嵌套標籤css樣式</p>
+        </div>
+
+        <div class="box1">
+            <p>
+            選擇器1和選擇器2 可以式任意一種選擇器
+            </p>
+        </div>
+
+    <!-- 不具嵌套關器的標籤 -->
+        <p>沒嵌套的不會修改</p>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        form 表單標籤:
+            action屬性: 這置表單數據提交地址(要加http://)
+            method屬性: 設置表單提交方式，一般有 POST / GET 方法(類同http請求報文)，不區分大小寫
+
+        提交表單:
+            在input、select、textarea、radio、checkbox 等標籤中設置name/value:
+
+                name屬性: 指定表單欄位的名稱，作為提交資料時的「欄位名稱」或「鍵值」 
+                value屬性: 指定提交時的「欄位內容」或「值」
+
+                ex: name="性別" value="女"，則提交的資料: 性別=女
+                (設置value時，可以用1.2.3，來代指具體的數據 ex:男.女.國籍...，以節省空間，提高傳輸效率)
+     
+    -->
+
+
+    <form action="http://192.168.88.128:8080" method="post">
+        <p>
+            <label>姓名:</label>
+            <input type="text" name="name" value="" > 
+                                            <!-- type="text"."password"時  省略value不寫，則提交用戶輸入的值
+                                             如有設置value="xx" 則用戶不輸入時，會提交此默認值  -->
+            
+        </p>
+
+        <p>
+            <label>密碼:</label>
+            <input type="password" name="pass">
+        </p>
+
+        <p>
+            <label>性別:</label>
+            <input type="radio" name="gender" value="1"> 男
+            <input type="radio" name="gender" value="2"> 女
+                                            <!-- radio單選框 需要設置相同的 name，使一組選項只能選擇一個 -->
+                                             
+
+        </p>
+
+        <p>
+            <label>愛好:</label>
+            <input type="checkbox" name="like" value="1"> 唱歌
+            <input type="checkbox" name="like" value="2"> 跳舞
+            <input type="checkbox" name="like" value="3"> 游泳
+        </p>
+
+        <p>
+            <label>照片:</label>
+            <input type="file" name="picture">
+        </p>
+
+        <p>
+            <label>個人描述:</label>
+            <textarea name="desc">這裡可輸入預設內容</textarea> 
+        </p>
+
+        <p>
+            <label>籍貫:</label>
+            <select name="city">
+                <option value="台南" >台南</option>
+                <option value="高雄">高雄</option>
+                <option value="屏東">屏東</option>
+            </select>
+                                <!-- select 與 option標籤的嵌套中，name會寫在select,value則寫在option中 -->
+        </p>
+        
+        <p>
+            <input type="submit" value="提交">
+            <input type="reset" value="重設">
+                                <!-- type= submit/reset 時，按鈕的顯示文字是由 value決定的 -->
+            
+            <!-- 
+            補充: 也可使用 <button> 標籤實現
+                
+                <button type="submit" name="action" value="save">儲存</button>
+                <button type="submit" name="action" value="delete">重設</button>
+                
+                    注意:
+                        1. <button>中 按鈕顯示的文字是寫在外面的，而不是value決定
+                        2. <button> 較使用 <input> 靈活，可以用來包含更多的 HTML 內容（例如文本、圖片等）
+            -->
+        </p>
+    </form>
+
+
+
+</body>
+</html>
+

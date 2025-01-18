@@ -1,0 +1,85 @@
+<!-- 
+css 選擇器: css 用來選則出標籤，並給標籤加樣式。
+
+css 選擇器的種類:
+
+1.標籤選擇器
+2.類選擇器
+3.層級選擇器（後代選擇器）
+4.id選擇器
+5.組選擇器
+6.偽類選擇器
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 選擇器 寫在style裡 -->
+    <style>
+        /* 
+        6. 偽類選擇器: 根據某些特定的「狀態」或「條件」來選擇html元素
+
+        # 主要用在 用戶與網站的交互上
+        
+        # 常見的偽類選擇器動作
+        1. hover: 滑鼠「懸浮」一個元素時，讓這個元素的樣式變化
+        2. focus: 點進輸入框後，邊框會亮起來。
+        3. first-child: 找到某個「父元素」裡的第一個子元素，給它特殊的樣式(給列表的第一項設計不同顏色。)
+        4. nth-child(n): 按順序找到第 n 個元素來改樣式
+        5. checked: 用來選中「勾選」的項目，比如複選框或單選框，可以針對已勾選的項目進行設計。
+
+        語法:
+            選擇器 動作{
+                屬性:值
+            } 
+        */
+        
+        /* 1. hover: 當滑鼠懸停在 box1 上時，改變背景顏色 */
+        .box1:hover {
+            background-color: lightblue;
+        }
+
+        /* 2. focus: 假設有一個文本框，當它被選中時，邊框變為藍色 */
+        input:focus {
+            border: 10px solid blue;
+        }
+
+        /* 3. first-child: 選擇父元素中的第一個子元素 */
+        p:first-child {
+            color: green;
+        }
+
+        /* 4. nth-child: 選擇父元素中的第二個p元素 */
+        p:nth-child(2) {
+            color: purple;
+        }
+
+        /* 5. checked: 假設有一個複選框，選中時改變顏色 */
+        input[type="checkbox"]:checked {
+            background-color:red
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 6. 偽類選擇器 -->
+    <p class="box1">這是第一個 p 元素</p>
+    <p class="box2">這是第二個 p 元素</p>
+    <p class="box3">這是第三個 p 元素</p>
+
+    <br>
+    <!-- 添加一個輸入框來演示 focus -->
+    <input type="text" placeholder="點擊我，我會變藍" />
+
+    <br>
+    <!-- 添加一個複選框來演示 checked -->
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox">勾選我會改變背景顏色</label>
+
+</body>
+</html>
