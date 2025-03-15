@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hellon Vue</title>
+    
+    <!-- 1. 導入Vue 開發環境 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+</head>
+<body>
+    <!-- 3. 使用模板語法將數據渲染到頁面上 -->
+    <div id="app">
+        {{ message  }}
+    </div>
+
+    <!-- 2. 建立Vue實例 -->
+     <script>
+     var app = new Vue({
+        el:"#app",
+        data:{
+            message:"Hello Vue!"
+        }
+     })
+     </script>
+</body>
+</html>

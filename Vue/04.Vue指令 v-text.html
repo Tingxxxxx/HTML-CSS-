@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text 指令</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+    <!-- 
+    v-text 指令: 設置標籤的文本值
+    1. 使用v-text=....默認會替換全部內容
+    2. 使用{{}}會保留括號外的內容
+    3. 內部支援寫表達式，例如拼接字符串
+    -->
+    <div id="app">
+        <h1 v-text="greeting"></h1>
+        <h2 v-text="info"></h2>
+        <h3>前面會保留{{ message }}</h3>
+        <hr>
+        <!-- 可以自由拼接 -->
+        <h1 v-text="greeting+'!!!!'"></h1>
+        <h3>前面會保留{{ message+"!!!!!!"}}</h3>
+    </div>
+
+    <script>
+        app = new Vue({
+            el:"#app",
+            data:{
+                greeting: "我是gretting的值",
+                info:"我是info的值",
+                message:"112233"
+            }
+        })
+
+    </script>
+</body>
+</html>

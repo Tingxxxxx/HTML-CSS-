@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>el掛載點</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body id="app">
+    <!-- 
+    vue的作用範圍:
+    1. 對掛載點外部元素沒有用
+    2. 掛載點內的元素有效
+    3. #app 下的所有子元素，都會受到 Vue 的控制和數據渲染。
+    4. 掛載點內的模板語法會根據 data 中的數據進行渲染
+
+    vue選擇器: 盡量使用id即可
+    1. id選擇器: "#app"
+    2. class選擇器:".app"
+    3. 標籤選擇器: "div"
+
+    el掛載點: 用來設置vue實例管理的元素
+
+    那些標籤可以使用{{}}語法渲染數據:
+    1. 只有雙標籤可以
+    2. 單標籤無法使用{{}} 語法
+    3. 不要掛載到<body> 或 <html>
+        報錯:Do not mount Vue to <html> or <body> 
+
+    -->
+    {{ message }}
+    <div id="app" class="app">
+        {{ message }}
+        <p>{{ message }}</p>
+        <h2>{{ message }}</h2>
+
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:"#app",
+            // el:".app",
+            // el:"div",
+            data:{
+                message:'我愛你'
+            }
+        })
+    </script>
+</body>
+</html>

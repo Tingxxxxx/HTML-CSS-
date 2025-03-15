@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on指令</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <!--
+    v-on指令: 為元素綁定事件
+
+    語法:
+    1. v-on:事件名="函數名" 或用 @事件="函數名
+    2. 事件名不用加""，函數名才要""
+    3. 函數寫在vue 實例中的methods屬性中,如下
+
+        methods:{
+            函數名:function(){
+            }    
+        }
+    4. 可通過this.屬性名 來獲得寫在data中的數據
+
+
+    常見事件:
+    1. click - 綁定點擊事件
+    2. dblclick - 綁定雙擊事件
+    2. mouseover - 綁定鼠標懸停事件
+    3. keyup - 綁定鍵盤事件(釋放時)
+    4. keydown - 綁定鍵盤事件(按下時)
+    4. input - 綁定輸入事件
+
+   
+    -->
+    <div id="app">
+        <button v-on:click="clickfunc">單擊我</button>
+        <button @dblclick="dbclickfunc">雙擊我</button>
+        <button v-on:mouseover="mouseoverfunc">滑鼠懸停在按鈕上</button>
+        <input type="text" v-on:keyup="keyupfunc" placeholder="keyup鍵盤事件">
+        <input type="text" @keydown="keydownfunc" placeholder="keydown鍵盤事件">
+        <input type="text" v-on:input="updatemsgfunc" placeholder="更新下方message的內容">
+        <p>message:{{message}}</p>
+
+
+
+
+        <script>
+           var app = new Vue({
+            el:"#app",
+            data:{
+                message:'hello my name is hellen'
+            },
+            methods:{
+                clickfunc:function(){
+                    alert('點擊事件發生');
+                },
+                dbclickfunc:function(){
+                    alert('雙擊事件發生');
+                },
+                mouseoverfunc:function(){
+                    alert('滑鼠懸停在按鈕上');
+                },
+                keyupfunc:function(event){
+                    alert('你按下了'+event.key);
+                    //也可使用 ${} 來插入變數，同python的f"{}"
+                    // alert(`按下了：${event.key}`); 
+                },
+                keydownfunc:function(event){
+                    alert('你按住了'+event.key);
+
+                },
+                updatemsgfunc:function(event){
+                    this.message = event.target.value
+                }
+
+            }
+           })
+        </script>
+
+    </div>
+
+</body>
+</html>

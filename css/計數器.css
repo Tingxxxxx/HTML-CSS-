@@ -1,0 +1,36 @@
+/* 設定 #app 容器樣式 */
+#app {
+    display: flex; /* 使用 Flexbox 佈局，讓元素（按鈕、數字區）並排顯示 */
+    align-items: center; /* 垂直置中對齊元素 */
+    justify-content: center; /* 水平置中對齊元素 */
+    font-size: 24px; /* 設定 #app 內部字體大小為 24px，影響按鈕和數字區的字體大小 */
+    margin-top: 50px; /* 設定距離頁面頂部的邊距為 50px，避免與頁面頂端過於貼近 */
+}
+
+/* 設定 button 按鈕樣式 */
+button {
+    width: 50px; /* 設定按鈕寬度為 50px */
+    height: 50px; /* 設定按鈕高度為 50px */
+    font-size: 24px; /* 設定按鈕中文字的字體大小為 24px */
+    font-weight: bold; /* 設定按鈕中文字為粗體 */
+    background-color: gray; /* 設定按鈕背景顏色為灰色 */
+    color: red; /* 設定按鈕內文字顏色為紅色 */
+    border: none; /* 移除按鈕邊框 */
+    cursor: pointer; /* 設定滑鼠懸停時顯示為手型，表示按鈕可點擊 */
+}
+
+/* 設定數字顯示區 span 的樣式 */
+span {
+    display: inline-block; /* 設定 span 顯示為 inline-block，允許設定寬高 */
+    width: 60px; /* 設定數字區寬度為 60px */
+    height: 50px; /* 設定數字區高度為 50px，與按鈕高度一致 */
+    text-align: center; /* 設定文字水平居中對齊 */
+    line-height: 50px; /* 設定行高與高度一致，讓數字垂直置中 */
+    font-weight: bold; /* 設定數字區文字為粗體 */
+    font-size: 24px; /* 設定數字區文字的字體大小為 24px */
+    color: black; /* 設定數字區文字顏色為黑色 */
+    background-color: white; /* 設定數字區背景顏色為白色 */
+    border: 2px solid gray; /* 設定數字區邊框為 2px 寬的灰色邊框 */
+    margin: 0 10px; /* 設定左右邊距為 10px，讓數字區與按鈕保持距離 */
+}
+
