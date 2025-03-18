@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網路請求庫 axios 基本</title>
+</head>
+
+<body>
+    <!-- 1. 導入 axios 庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- 
+            axos 學習測試用:
+            API : JSONPlaceholder 提供的一個假資料 API，專門用來進行前端開發和測試。
+            URL: https://jsonplaceholder.typicode.com/posts/
+            請求方法: get、post
+            get請求參數: id (獲取指定id的文章)
+            post請求參數: title、 body、userId
+
+            響應各欄位說明：
+            userId: 這篇文章所屬的使用者 ID，通常會對應到 users 資料表中的某個使用者。
+            id: 這篇文章的唯一 ID，這裡是 2。
+            title: 文章的標題。
+            body: 文章的內容。
+        -->
+    <input type="button" value="發送get請求" class="get" />
+    <input type="button" value="發送post請求" class="post" />
+
+    <script>
+        /*
+            axios.方法名(url)
+                .then(function(response) {
+                // 成功時的回調函數
+                console.log(response.data);  // 在這裡處理成功的返回數據
+            })
+            .catch(function(error) {
+                // 失敗時的回調函數
+                console.error('發生錯誤:', error);  // 在這裡處理錯誤
+            });
+
+            傳遞參數:
+            get請求: ?key=value&key2=value....  
+            ex: https://jsonplaceholder.typicode.com/posts?userId=1&id=2
+
+            post請求: axios.post("url",{key:value,....})
+            ex: axios.post("https://jsonplaceholder.typicode.com/posts", 
+            {key:value, key2:value}
+        
+        */
+        document.querySelector(".get").onclick = function () {
+            axios.get("https://jsonplaceholder.typicode.com/posts/2").then(
+                function (respone) {
+                    console.log(respone.data);
+                },
+                function (error) {
+                    console.error(error);
+                }
+            );
+        };
+
+        document.querySelector(".post").onclick = function () {
+            axios
+                .post("https://jsonplaceholder.typicode.com/posts/", {
+                    title: "測使post請求的文章標題",
+                    body: "測試內容~~~~",
+                    userId: 1,
+                })
+                .then(
+                    function (respone) {
+                        console.log(respone.data);
+                    },
+                    function (error) {
+                        console.log(error.message);
+                    }
+                );
+        };
+    </script>
+</body>
+
+</html>
