@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-mode</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+    <!-- 
+        v-mode: 獲取和設置表單元素的值(雙向數據綁定)
+        1. 主要用於表單元素（如 input、textarea、select、checkbox、radio....）    
+        2. 當用戶輸入數據時，v-model 會自動更新 Vue 實例中的數據，並且數據變化時，界面上的值也會同步變更。
+    -->
+
+    <div id=app>
+        <!-- 輸入框的的數據與vue實例中的message會同步更新 -->
+        <input type="text" v-model="message" @keyup.enter="getmsg">
+        <h4>{{message}}</h4>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:"台灣世界第一"
+            },
+            methods:{
+                getmsg:function(){  //實時獲取並彈窗顯示
+                    alert(this.message);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

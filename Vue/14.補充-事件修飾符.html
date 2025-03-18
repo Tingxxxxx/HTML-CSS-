@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件修飾符範例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 
+    事件修飾符:
+    Vue 提供事件修飾符來簡化事件處理:
+    1. .stop  - 阻止事件冒泡
+    2. .prevent  - 阻止默認行為 (例如 form 提交)
+    3. .capture  - 事件在捕獲階段處理
+    4. .self  - 事件必須直接作用在該元素才會觸發
+    5. .once  - 事件只執行一次
+    6. .passive  - 提高滾動效能 (不阻止默認行為)
+
+    事件修飾符示例:
+    1. <button @click.stop="doSomething">阻止冒泡</button>
+    2. <form @submit.prevent="submitForm">阻止表單提交</form>
+    3. <div @click.capture="parentHandler">先處理父元素</div>
+    4. <button @click.once="onlyOnce">只觸發一次</button>
+
+    監聽鍵盤按鍵:
+    .enter
+    .ctrl
+    等等........
+
+    -->
+    <div id="app">
+        <button>點擊</button>
+        <input @keyup.enter="listen" type="text" name="" id="">
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:"#app",
+            methods:{
+                listen:function(){
+                    alert("按下 Enter"); //通過.enter修飾，僅有按此鍵才會觸發
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

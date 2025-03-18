@@ -1,0 +1,49 @@
+/* 容器樣式 */
+.container {
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    position: relative; /* 給左右箭頭提供定位參考 */
+    height: 100vh; /* 讓容器占滿整個瀏覽器視窗高度 */
+    background-color: #f9f9f9; /* 可選：設置背景顏色 */
+}
+
+/* 圖片樣式 */
+.container img:nth-of-type(2) {
+    max-width: 80%; /* 限制圖片最大寬度 */
+    max-height: 80%; /* 限制圖片最大高度，保持比例 */
+    display: block;
+    z-index: 1; /* 圖片層級，防止被箭頭遮擋 */
+}
+
+/* 左箭頭樣式 */
+.arrow.left {
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    left: 20px; /* 靠近圖片左側 */
+    transform: translateY(-50%); /* 修正位置，讓箭頭垂直居中 */
+    cursor: pointer; /* 鼠標樣式 */
+    width: 40px; /* 調整箭頭大小 */
+    opacity: 0.7; /* 半透明 */
+    z-index: 10; /* 確保箭頭顯示在圖片之上 */
+    transition: opacity 0.3s ease;
+}
+.arrow.left:hover {
+    opacity: 1; /* 滑鼠懸停時透明度增強 */
+}
+
+/* 右箭頭樣式 */
+.arrow.right {
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    right: 20px; /* 靠近圖片右側 */
+    transform: translateY(-50%); /* 修正位置，讓箭頭垂直居中 */
+    cursor: pointer; /* 鼠標樣式 */
+    width: 40px; /* 調整箭頭大小 */
+    opacity: 0.7; /* 半透明 */
+    z-index: 10; /* 確保箭頭顯示在圖片之上 */
+    transition: opacity 0.3s ease;
+}
+.arrow.right:hover {
+    opacity: 1; /* 滑鼠懸停時透明度增強 */
+}

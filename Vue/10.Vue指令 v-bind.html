@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <style>
+        /* .active 這個類是否生效*/
+        .active{
+            font-size: 24px;
+            color: red;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+        v-bind: 設置元素的屬性(ex:src,title,class...)
+
+        語法:
+        v-bind:屬性名="值" 或是簡寫 :屬姓名=值
+        ex:
+        v-bind:src=....  
+        :src=.....
+        注意: 可同時綁定多個屬性
+        ex: <img :src="imgsrc" :title="imgtitle" alt="顯示圖片">
+
+
+    -->
+    <div id="app">
+        <!-- 綁定 圖片src屬性 -->
+        <img v-bind:src="imgsrc" alt="">
+
+        <!-- 綁定title屬性 -->
+        <img :src="imgsrc" :title="imgtitle" alt="">
+
+        <!-- 綁定class屬性 = active類 並動態切換是否顯示css樣式-->
+        <img :src="imgsrc" :class="{active:isActive}" alt="" @click="toggleActive">
+        <br>
+        <img :src="imgsrc" v-bind:class="isActive ? 'active' : ''" @click="toggleActive">
+        
+        <!-- 
+        三元表達式語法: 條件判斷式 ? 表達式1 : 表達式2
+        
+        表達式1：當條件為 true 時執行的結果。
+        表達式2：當條件為 false 時執行的結果。  
+        -->
+        
+    </div>
+
+    <!-- 2. 建立Vue實例 -->
+     <script>
+     var app = new Vue({
+        el:"#app",
+        data:{
+            imgsrc:"../source/START.png",
+            imgtitle:"這是一張圖片",
+            isActive: false // 初始值為假
+        },
+        methods:{
+            toggleActive(){
+                this.isActive =!this.isActive; // 切換isActive的值
+            }
+        }
+     })
+     </script>
+</body>
+</html>

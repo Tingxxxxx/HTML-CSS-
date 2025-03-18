@@ -1,0 +1,103 @@
+/* 將畫面整體置中 */
+body {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    height: 100vh; /* 讓容器填滿整個畫面高度 */
+    margin: 0; /* 移除默認邊距 */
+    background-color: #f5f5f5; /* 設置背景顏色為淺灰色 */
+}
+
+/* 主容器的樣式 */
+#todoapp {
+    width: 400px; /* 固定寬度為 400px */
+    background: white; /* 背景為白色 */
+    padding: 20px; /* 容器內部留白 */
+    border-radius: 10px; /* 圓角邊框 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+}
+
+/* 調整 "記事本" 標題置中 */
+.header h1 {
+    text-align: center; /* 標題文字置中 */
+    margin: 0; /* 移除默認邊距 */
+    font-size: 24px; /* 設置標題字體大小 */
+}
+
+/* 輸入框樣式，與下方列表保持一致 */
+.new-todo {
+    width: 280px; /* 固定寬度，與 label 相同 */
+    margin: 10px auto; /* 上下間距並水平置中 */
+    display: block; /* 塊級元素，便於置中 */
+    padding: 8px; /* 添加內邊距，增加輸入框舒適度 */
+    border: 1px solid #ddd; /* 添加邊框 */
+    border-radius: 5px; /* 邊框圓角 */
+    box-sizing: border-box; /* 包括內邊距和邊框 */
+}
+
+/* 每個任務項的樣式 */
+.todo {
+    display: flex; /* 使用 Flexbox 排版 */
+    align-items: center; /* 垂直置中內容 */
+    justify-content: space-between; /* 兩端對齊 */
+    padding: 8px; /* 每項的內邊距 */
+    border-bottom: 1px solid #ddd; /* 在底部分割線 */
+    position: relative; /* 為 X 按鈕設置相對定位 */
+}
+
+/* 設置索引號的樣式 */
+.index {
+    color: gray; /* 索引號顏色為灰色 */
+    width: 30px; /* 固定寬度，方便對齊 */
+    text-align: center; /* 文字置中對齊 */
+}
+
+/* 標籤（label）的樣式 */
+label {
+    flex: 1; /* 填充剩餘空間，讓文字自適應寬度 */
+    text-overflow: ellipsis; /* 文字溢出時顯示省略號 */
+    overflow: hidden; /* 隱藏溢出的部分 */
+    white-space: nowrap; /* 強制單行顯示 */
+    padding-left: 10px; /* 增加文字和索引號之間的間距 */
+}
+
+/* 刪除按鈕 (x) 樣式，固定在右側 */
+.destory {
+    color: red; /* 按鈕文字顏色為紅色 */
+    background: none; /* 移除背景 */
+    border: none; /* 移除邊框 */
+    font-size: 16px; /* 文字大小 */
+    cursor: pointer; /* 滑鼠懸停時顯示點擊手勢 */
+    width: 30px; /* 固定寬度，確保統一 */
+    height: 30px; /* 固定高度，確保對齊 */
+    display: flex; /* 使用 Flexbox 對齊 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    position: absolute; /* 絕對定位 */
+    right: 0; /* 固定在容器的最右側 */
+    top: 50%; /* 垂直置中 */
+    transform: translateY(-50%); /* 修正垂直偏移，達到精確置中 */
+}
+
+/* 統計和清除按鈕的樣式 */
+.footer {
+    display: flex; /* 使用 Flexbox */
+    justify-content: space-between; /* 讓統計和按鈕分別對齊 */
+    align-items: center; /* 垂直置中 */
+    margin-top: 10px; /* 與列表留出間距 */
+}
+
+.todo-count {
+    font-size: 14px; /* 設置字體大小 */
+    color: #555; /* 字體顏色 */
+}
+
+.clear-completed {
+    color: white; /* 按鈕文字顏色 */
+    background-color: red; /* 按鈕背景顏色 */
+    border: none; /* 移除邊框 */
+    padding: 5px 10px; /* 添加內邊距 */
+    border-radius: 5px; /* 邊框圓角 */
+    font-size: 14px; /* 字體大小 */
+    cursor: pointer; /* 滑鼠懸停時顯示點擊手勢 */
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>任務記事本</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="../css/mynote.css">
+</head>
+
+<body>
+    <!-- 主體區域 -->
+    <section id="todoapp">
+        <!-- 輸入框 -->
+        <header class="header">
+            <h1>任務記事本</h1>
+            <input v-model="msg" @keyup.enter="add" autofocus="autofocus" autocomplete="off" placeholder="請輸入..." 
+            class="new-todo" />
+        </header>
+        <!-- 列表區域 -->
+        <section class="main">
+            <ul class="todo-list">
+                <li class="todo" v-for="(item,index) in Arr">
+                    <div class="vew">
+                        <span class="index">{{ index + 1 }}</span>
+                        <label>{{ item }}</label>
+                        <button class="destory" @click="remove(index)">x</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- 統計和清空 -->
+        <footer class="footer">
+            <span v-show="this.Arr!=0" class="todo-count">
+                <strong>{{Arr.length}}</strong> item left
+            </span>
+            <button class="clear-completed" @click="clearAll">Clear</button>
+        </footer>
+    </section>
+
+    <script>
+        var app = new Vue({
+            el: "#todoapp",
+            data: {
+                msg: "",
+                Arr: [],
+            },
+            methods: {
+                add: function () {
+                    this.Arr.push(this.msg);
+                },
+                remove:function(index){
+                    this.Arr.splice(index, 1); //splice(從哪刪,刪幾個)
+                },
+                clearAll:function(){
+                    this.Arr = []; //清空所有數據
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show指令</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        img {
+            margin: 10px;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        v-show 指令: 根據表達式的真假，切換元素的顯示或隱藏
+        注意: 元素不會被真正移除，只是 display:none
+
+        v-show 後面可寫
+        1. 變量
+        2. 布爾值
+        3. 表達式
+
+        注意: 
+        1. 與v-if最大差別在，部會移除元素，而是"隱藏"
+        2. 因為元素不會消失，不會重新加載，故效率比v-if好
+    -->
+    <div id="app">
+        <button @click="switchDisplay">點我切換開關</button>
+        <button @click="addage">點我++年齡,18歲可顯示</button>
+        <p>目前年齡：{{ age }}</p>
+        <img v-show="display" src="../source/START.png" alt="顯示圖片">
+        <img v-show="age > 18" src="../source/START.png" alt="顯示圖片">
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                display: true,
+                age: 10
+            },
+            methods: {
+                switchDisplay: function() {
+                    this.display = !this.display; // 切換顯示狀態
+                },
+                addage: function() {
+                    this.age++; // 年齡加一
+                }
+            }
+        });
+    </script>
+</body>
+</html>

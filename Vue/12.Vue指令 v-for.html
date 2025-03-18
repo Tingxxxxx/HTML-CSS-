@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for指令</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+</head>
+<body>
+    <!-- 
+        v-for 指令: 根據數據生成列表結構
+        語法: 
+        v-for="item in Arr" 或 v-for="(item,index) in Arr"
+        1. item, index 等變量名可換
+        2. in 是固定用法
+        3. 搭配[]使用，元素可以是一般數據或是{key:value}對象結構都可以
+        4. 搭配{{}}語法取值
+        5. 取出的 item、index 可以搭配其他指令使用
+
+     -->
+
+     <div id="app">
+        <button @click="add">點我增加fodd</button>
+        <button @click="remove">點我移除food</button>
+        <ul>
+            <!-- x in Arr列表，並賦值給item -->
+            <li v-for="item in Arr" >
+                {{ item }}
+            </li>
+        </ul>
+        <ul>
+            <!-- 可以同時取出列表中的元素與索引，也可將取出變量賦值給其他指令使用 -->
+            <h4 v-for="(item,index) in food" v-bind:title="item.name">
+                {{ index+1 }}. {{ item.name }} 
+            </h4>
+        </ul>
+     </div>
+
+     <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                Arr:["台北","高雄","台南","屏東"],
+                food:[
+                    {name:"pizza"},
+                    {name:"chocolate"},
+                    {name:"burger"},
+                ]
+            },
+            methods:{
+                add:function(){
+                    this.food.push({name:"milk"})
+                },
+                remove:function(){
+                    this.food.pop()
+                }
+            }
+        })
+     </script>
+</body>
+</html>
